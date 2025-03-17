@@ -30,7 +30,7 @@ export default function Home() {
     try {
       const response = await axios.get("/api/invoice-count");
       const year = new Date().getFullYear();
-      const paddedCount = String(response.data+1).padStart(4, "0");
+      const paddedCount = String(response.data + 1).padStart(4, "0");
       const invoiceNumber = `DWPL/${year}/${paddedCount}`;
 
       setFormData((prev) => ({
@@ -73,7 +73,11 @@ export default function Home() {
   }, [formData.items.length]);
 
   // Unified handler for all item fields
-  const handleItemChange = (index: number, field: keyof Item, value: any) => {
+  const handleItemChange = (
+    index: number,
+    field: keyof Item,
+    value: unknown
+  ) => {
     const newItems = [...formData.items];
 
     // Convert to number for numeric fields
@@ -90,7 +94,9 @@ export default function Home() {
   };
 
   // Handler for top-level form fields
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFormChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -330,7 +336,6 @@ export default function Home() {
                         Description
                       </label>
                       <textarea
-                        type="text"
                         value={item.description}
                         onChange={(e) =>
                           handleItemChange(index, "description", e.target.value)

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 
 interface Item {
   serialNumber: string;
@@ -17,6 +17,8 @@ interface Invoice {
   items: Item[];
   subTotal: number;
   cgst: number;
+  date?:Date;
+  duedate?: Date;
   sgst: number;
   igst: number;
   grossAmount: number;

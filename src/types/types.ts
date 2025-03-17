@@ -10,6 +10,7 @@ export interface Item {
 export interface Invoice {
   invoiceNumber: string;
   address: string;
+  date?: Date;
   items: Item[];
   subTotal: number;
   cgst: number;

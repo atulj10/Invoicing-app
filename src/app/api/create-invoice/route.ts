@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import Invoice, { InvoiceDocument } from "@/models/Invoice";
+import Invoice from "@/models/Invoice";
 import { connectDB } from "@/lib/db";
 import { Item } from "@/types/types";
 
@@ -50,16 +50,21 @@ export async function POST(request: Request) {
       },
       { status: 201 }
     );
-  } catch (error: any) {
-    // Enhanced error logging
-    console.error("Error details:", error);
-
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error details:", error);
+      return NextResponse.json(
+        {
+          success: false,
+          error: error.message,
+        },
+        { status: 400 }
+      );
+    }
     return NextResponse.json(
       {
         success: false,
-        error: error.message || "Unknown error",
-        code: error.code,
-        details: error,
+        error: "An unknown error occurred",
       },
       { status: 400 }
     );
