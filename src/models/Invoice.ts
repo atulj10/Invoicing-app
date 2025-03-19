@@ -20,7 +20,7 @@ const itemSchema = new Schema<Item>({
   quantity: { type: Number, required: true },
   rate: { type: Number, required: true },
   amount: { type: Number, required: true },
-  itemName: { type: String, required: true },
+  // itemName: { type: String, required: true },
 });
 
 const invoiceSchema = new Schema<InvoiceDocument>(

@@ -17,7 +17,7 @@ interface Invoice {
   items: Item[];
   subTotal: number;
   cgst: number;
-  date?:Date;
+  date?: Date;
   duedate?: Date;
   sgst: number;
   igst: number;
@@ -200,9 +200,10 @@ const InvoicePrintPage = ({
           <div className=" p-2 w-[60%] border-r-[0.1rem] font-bold pb-12 print:pb-5">
             <p>Payment can be deposited by Cheque /DD/NEFT/RTGS directly</p>
             <p>Bank: AXIS BANK</p>
-            <p>Account Name: DIMENSION WEBSORT PVT. LTD.</p>
-            <p>Account Number: 91802008462657</p>
-            <p>IFSC code -UTIB00034948nach: Gandhi Maidan , Patna</p>
+            <p>Account Name: DIMENSION WEBSOFT PVT. LTD.</p>
+            <p>Account Number: 918020084626257</p>
+            <p>IFSC code: UTIB0003494</p>
+            <p>Branch: Gandhi Maidan , Patna</p>
           </div>
 
           <div className="text-left w-[40%] flex flex-col justify-between p-2 font-bold pb-12 print:pb-5">

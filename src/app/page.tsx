@@ -15,7 +15,7 @@ export default function Home() {
         quantity: 0,
         rate: 0,
         amount: 0,
-        itemName: "",
+        // itemName: "",
       },
     ],
     subTotal: 0,
@@ -115,7 +115,7 @@ export default function Home() {
           quantity: 0,
           rate: 0,
           amount: 0,
-          itemName: "",
+          // itemName: "",
         },
       ],
     });
@@ -141,12 +141,16 @@ export default function Home() {
       0
     );
 
-    // Tax calculations
-    const cgst = subTotal * 0.09;
-    const sgst = subTotal * 0.09;
-    const igst = formData.address.toLowerCase().includes("bihar")
-      ? 0
-      : subTotal * 0.18;
+    // Modified tax calculations: CGST + SGST for Bihar, IGST for others
+    const isBiharAddress = formData.address.toLowerCase().includes("bihar");
+
+    // Apply CGST and SGST for Bihar addresses, zero for others
+    const cgst = isBiharAddress ? subTotal * 0.09 : 0;
+    const sgst = isBiharAddress ? subTotal * 0.09 : 0;
+
+    // Apply IGST for non-Bihar addresses, zero for Bihar
+    const igst = isBiharAddress ? 0 : subTotal * 0.18;
+
     const grossAmount = subTotal + cgst + sgst + igst;
 
     // Update state with calculations
@@ -181,7 +185,7 @@ export default function Home() {
             quantity: 0,
             rate: 0,
             amount: 0,
-            itemName: "",
+            // itemName: "",
           },
         ],
         subTotal: 0,
@@ -304,7 +308,7 @@ export default function Home() {
                       </button>
                     )}
                   </div>
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Serial Number
@@ -316,7 +320,7 @@ export default function Home() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-700"
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Item Name
                       </label>
@@ -330,8 +334,8 @@ export default function Home() {
                         placeholder="Product name"
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-gray-700"
                       />
-                    </div>
-                    <div>
+                    </div> */}
+                    <div className="">
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Description
                       </label>
@@ -478,7 +482,7 @@ export default function Home() {
                   <span className="text-xs text-gray-500 italic">
                     {formData.address.toLowerCase().includes("bihar")
                       ? "(N/A for Bihar)"
-                      : ""}
+                      : "(Applied for non-Bihar)"}
                   </span>
                 </label>
                 <input

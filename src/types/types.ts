@@ -4,7 +4,7 @@ export interface Item {
   quantity: number;
   rate: number;
   amount: number;
-  itemName: string;
+  // itemName: string;
 }
 
 export interface Invoice {

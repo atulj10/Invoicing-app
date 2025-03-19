@@ -26,7 +26,7 @@ export async function POST(request: Request) {
         quantity: item.quantity,
         rate: item.rate,
         amount: item.amount,
-        itemName: item.itemName,
+        // itemName: item.itemName,
       })),
       subTotal: data.subTotal,
       cgst: data.cgst,
