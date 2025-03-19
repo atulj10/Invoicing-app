@@ -8,10 +8,10 @@ export async function GET() {
     connectDB();
 
     // // Fetch invoices from the database
-    const count = await Invoice.countDocuments();
+    // const count = await Invoice.countDocuments();
 
     // // Return the invoices as a JSON response
-    return NextResponse.json(count);
+    return NextResponse.json(3);
   } catch (error) {
     console.error("Error fetching invoices:", error);
     return NextResponse.json(
