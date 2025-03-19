@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import Invoice from "@/models/Invoice";
+// import Invoice from "@/models/Invoice";
 import { connectDB } from "@/lib/db";
 
 export async function GET() {
