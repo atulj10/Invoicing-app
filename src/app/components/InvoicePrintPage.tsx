@@ -45,9 +45,9 @@ const InvoicePrintPage = ({
         <h1 className="text-2xl print:text-[0.6rem] font-bold">
           Mis Dimension Websoft Pvt. Ltd.
         </h1>
-        <p className="print:text-[0.6rem]">218 Patliputra Colony</p>
+        <p className="print:text-[0.6rem]">218, Patliputra Colony</p>
         <p className="print:text-[0.6rem]">Patna, Bihar 800013 IN</p>
-        <p className="print:text-[0.6rem]">9708037522 , 7654193389</p>
+        <p className="print:text-[0.6rem]">9708037522 | 7654193389</p>
         <p className="print:text-[0.6rem]">info@dimensionwebsoft.com</p>
         <p className="print:text-[0.6rem]">www.dwplgroup.com</p>
         <p className="print:text-[0.6rem]">GSTIN: 10AACCD5730B1ZJ</p>

@@ -497,7 +497,7 @@ export default function Home() {
             {/* Gross Amount */}
             <div className="mt-6">
               <label className="block text-lg font-semibold text-gray-800 mb-2">
-                Gross Amount
+                Total Amount
               </label>
               <input
                 type="text"
