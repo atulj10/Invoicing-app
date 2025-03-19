@@ -5,7 +5,7 @@ import { connectDB } from "@/lib/db";
 export async function GET() {
   try {
     // Connect to MongoDB
-    connectDB();
+    await connectDB();
 
     // // Fetch invoices from the database
     const count = await Invoice.countDocuments();
