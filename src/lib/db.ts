@@ -4,7 +4,7 @@ const MONGO_URI = process.env.MONGODB_URI as string;
 
 if (!MONGO_URI) {
   throw new Error(
-    "Please define the MONGO_URI environment variable inside .env.local"
+    "Please define the MONGODB_URI environment variable inside .env.local"
   );
 }
 
@@ -21,17 +21,40 @@ const cached: MongooseCache = globalWithMongoose.mongoose ?? {
   promise: null,
 };
 
-export async function connectDB(): Promise<typeof mongoose> {
-  if (cached.conn) return cached.conn;
+// Store the connection in the global object
+globalWithMongoose.mongoose = cached;
 
-  if (!cached.promise) {
-    cached.promise = mongoose
-      .connect(MONGO_URI, { bufferCommands: false })
-      .then((m) => m);
+export async function connectDB(): Promise<typeof mongoose> {
+  if (cached.conn) {
+    console.log("Using existing connection");
+    return cached.conn;
   }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+      maxPoolSize: 10, // Maintain up to 10 socket connections
+      serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+      socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+    };
+
+    console.log("Creating new connection to MongoDB");
+    cached.promise = mongoose.connect(MONGO_URI, opts).then((mongoose) => {
+      console.log("Connected to MongoDB");
+      return mongoose;
+    });
+  } else {
+    console.log("Reusing connection promise");
+  }
+
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
+  } catch (error) {
+    cached.promise = null;
+    console.error("MongoDB connection error:", error);
+    throw error;
+  }
 }
 
-// Store the connection globally to prevent multi
+export default connectDB;
