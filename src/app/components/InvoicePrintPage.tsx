@@ -45,13 +45,13 @@ const InvoicePrintPage = ({
         <h1 className="text-2xl print:text-[0.6rem] font-bold">
           Mis Dimension Websoft Pvt. Ltd.
         </h1>
-        <p className="print:text-[0.6rem]">LG-0, GV Mall, Bonny Road</p>
-        <p className="print:text-[0.6rem]">Patna, Bihar 800001 IN</p>
-        <p className="print:text-[0.6rem]">9708037522</p>
+        <p className="print:text-[0.6rem]">218 Patliputra Colony</p>
+        <p className="print:text-[0.6rem]">Patna, Bihar 800013 IN</p>
+        <p className="print:text-[0.6rem]">9708037522 , 7654193389</p>
         <p className="print:text-[0.6rem]">info@dimensionwebsoft.com</p>
-        <p className="print:text-[0.6rem]">www.dwglypoup.com</p>
-        <p className="print:text-[0.6rem]">CSTIN: 10AACDGF30B1ZJ</p>
-        <p className="print:text-[0.6rem]">PAN No. AACCDGF30B</p>
+        <p className="print:text-[0.6rem]">www.dwplgroup.com</p>
+        <p className="print:text-[0.6rem]">GSTIN: 10AACCD5730B1ZJ</p>
+        <p className="print:text-[0.6rem]">PAN No. AACCD5730B</p>
         <p className="print:text-[0.6rem]">CIN: U72200BR2006PTC012625</p>
       </div>
 
@@ -68,7 +68,7 @@ const InvoicePrintPage = ({
               </p>
             </div>
             <div className="print:text-[0.5rem] font-bold mt-3 mb-1">
-              <p>PLACE OF SUPPLY – Bihar</p>
+              <p>PLACE OF SUPPLY {"–"} Bihar</p>
             </div>
           </div>
 
@@ -187,7 +187,7 @@ const InvoicePrintPage = ({
             <tr>
               <td colSpan={3} className="border-l-0 border-r-0 border-t-0"></td>
               <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right text-lg">
-                GROSS AMOUNT
+                TOTAL AMOUNT
               </td>
               <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left text-xl font-bold">
                 {invoice.grossAmount.toFixed(2)}
@@ -198,7 +198,7 @@ const InvoicePrintPage = ({
 
         <div className="flex print:text-[0.5rem]">
           <div className=" p-2 w-[60%] border-r-[0.1rem] font-bold pb-12 print:pb-5">
-            <p>Payment can be deposited by Cheque /DD/NEFT/RTGS directly</p>
+            <p>Payment can be deposited by Cheque/DD/NEFT/RTGS directly</p>
             <p>Bank: AXIS BANK</p>
             <p>Account Name: DIMENSION WEBSOFT PVT. LTD.</p>
             <p>Account Number: 918020084626257</p>
@@ -207,8 +207,8 @@ const InvoicePrintPage = ({
           </div>
 
           <div className="text-left w-[40%] flex flex-col justify-between p-2 font-bold pb-12 print:pb-5">
-            <p>For DIMENSION WEBSORT PVT LTD.</p>
-            <p className="mt-8 ">Authorized Signatory</p>
+            <p>For DIMENSION WEBSOFT PVT LTD.</p>
+            <p className="mt-8  text-right">Authorized Signatory</p>
           </div>
         </div>
       </div>
