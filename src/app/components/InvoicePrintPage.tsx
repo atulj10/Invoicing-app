@@ -38,21 +38,21 @@ const InvoicePrintPage = ({
 
   return (
     <div className="p-24 print:p-8 bg-white text-black">
-      <p className="print:text-[0.6rem] font-bold text-right">
+      <p className="print:text-[0.85rem] font-bold text-right">
         ORIGINAL FOR RECIPIENT
       </p>
       <div className=" pb-2">
-        <h1 className="text-2xl print:text-[0.6rem] font-bold">
-          Mis Dimension Websoft Pvt. Ltd.
+        <h1 className="text-2xl print:text-[0.85rem] font-bold">
+          M/S Dimension Websoft Pvt. Ltd.
         </h1>
-        <p className="print:text-[0.6rem]">218, Patliputra Colony</p>
-        <p className="print:text-[0.6rem]">Patna, Bihar 800013 IN</p>
-        <p className="print:text-[0.6rem]">9708037522 | 7654193389</p>
-        <p className="print:text-[0.6rem]">info@dimensionwebsoft.com</p>
-        <p className="print:text-[0.6rem]">www.dwplgroup.com</p>
-        <p className="print:text-[0.6rem]">GSTIN: 10AACCD5730B1ZJ</p>
-        <p className="print:text-[0.6rem]">PAN No. AACCD5730B</p>
-        <p className="print:text-[0.6rem]">CIN: U72200BR2006PTC012625</p>
+        <p className="print:text-[0.85rem]">218, Patliputra Colony</p>
+        <p className="print:text-[0.85rem]">Patna, Bihar 800013 IN</p>
+        <p className="print:text-[0.85rem]">9708037522 | 7654193389</p>
+        <p className="print:text-[0.85rem]">info@dimensionwebsoft.com</p>
+        <p className="print:text-[0.85rem]">www.dwplgroup.com</p>
+        <p className="print:text-[0.85rem]">GSTIN: 10AACCD5730B1ZJ</p>
+        <p className="print:text-[0.85rem]">PAN No. AACCD5730B</p>
+        <p className="print:text-[0.85rem]">CIN: U72200BR2006PTC012625</p>
       </div>
 
       <h2 className="text-3xl print:text-sm font-bold text-center underline underline-offset-5">
@@ -62,17 +62,17 @@ const InvoicePrintPage = ({
         <div className="flex">
           <div className="pt-3 pl-2 w-[60%] border-r-[0.1rem]">
             <div>
-              <p className=" print:text-[0.5rem] font-bold">BILL TO:</p>
-              <p className="print:text-[0.5rem] whitespace-pre-wrap">
+              <p className=" print:text-[0.85rem] font-bold">BILL TO:</p>
+              <p className="print:text-[0.85rem] whitespace-pre-wrap">
                 {invoice?.address}
               </p>
             </div>
-            <div className="print:text-[0.5rem] font-bold mt-3 mb-1">
+            <div className="print:text-[0.85rem] font-bold mt-3 mb-1">
               <p>PLACE OF SUPPLY {"–"} Bihar</p>
             </div>
           </div>
 
-          <div className="pt-3 pl-2 w-[40%] print:text-[0.5rem] ">
+          <div className="pt-3 pl-2 w-[40%] print:text-[0.85rem] ">
             <p>TAX INVOICE NO: {invoice.invoiceNumber}</p>
             <p>
               Date:{" "}
@@ -96,19 +96,19 @@ const InvoicePrintPage = ({
         <table className="w-full border-[0.1rem] border-black border-l-0 border-r-0">
           <thead>
             <tr>
-              <th className=" print:text-[0.5rem] text-left border-[0.1rem] border-black p-2 print:py-0 border-l-0">
+              <th className=" print:text-[0.85rem] text-left border-[0.1rem] border-black p-2 print:py-0 border-l-0">
                 S.N.
               </th>
-              <th className=" print:text-[0.5rem] text-left border-[0.1rem] border-black p-2 print:py-0">
+              <th className=" print:text-[0.85rem] text-left border-[0.1rem] border-black p-2 print:py-0">
                 Description of service
               </th>
-              <th className=" print:text-[0.5rem] text-left border-[0.1rem] border-black p-2 print:py-0">
+              <th className=" print:text-[0.85rem] text-left border-[0.1rem] border-black p-2 print:py-0">
                 QTY
               </th>
-              <th className=" print:text-[0.5rem] text-left border-[0.1rem] border-black p-2 print:py-0">
+              <th className=" print:text-[0.85rem] text-left border-[0.1rem] border-black p-2 print:py-0">
                 RATE
               </th>
-              <th className=" print:text-[0.5rem] text-left  p-2 print:py-0">
+              <th className=" print:text-[0.85rem] text-left  p-2 print:py-0">
                 AMOUNT
               </th>
             </tr>
@@ -117,19 +117,19 @@ const InvoicePrintPage = ({
             {/* This should have a min height of 200px */}
             {invoice.items.map((item, index) => (
               <tr key={index}>
-                <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-l-0">
+                <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-l-0">
                   {item.serialNumber}
                 </td>
-                <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1">
+                <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1">
                   {item.description}
                 </td>
-                <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1">
+                <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1">
                   {item.quantity}
                 </td>
-                <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1">
+                <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1">
                   {item.rate.toFixed(2)}
                 </td>
-                <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0">
+                <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0">
                   {item.amount.toFixed(2)}
                 </td>
               </tr>
@@ -141,10 +141,10 @@ const InvoicePrintPage = ({
                 colSpan={3}
                 className="border-l-0 border-r-0 border-b-[0.1rem]"
               ></td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
                 SUB TOTAL
               </td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
                 {invoice.subTotal.toFixed(2)}
               </td>
             </tr>
@@ -153,11 +153,11 @@ const InvoicePrintPage = ({
                 colSpan={3}
                 className="border-l-0 border-r-0 border-b-[0.1rem] border-t-0"
               ></td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
                 ADD - CGST@9 %
               </td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
-                {invoice.cgst.toFixed(2)}
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
+                {invoice.cgst != 0 ? invoice.cgst.toFixed(2) : "N/A"}
               </td>
             </tr>
             <tr>
@@ -165,11 +165,11 @@ const InvoicePrintPage = ({
                 colSpan={3}
                 className="border-l-0 border-r-0 border-b-[0.1rem] border-t-0"
               ></td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
                 ADD - SGST@9 %
               </td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
-                {invoice.sgst.toFixed(2)}
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
+                {invoice.sgst != 0 ? invoice.cgst.toFixed(2) : "N/A"}
               </td>
             </tr>
             <tr>
@@ -177,26 +177,26 @@ const InvoicePrintPage = ({
                 colSpan={3}
                 className="border-l-0 border-r-0 border-b-[0.1rem] border-t-0"
               ></td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right">
                 ADD - IGST@18 %
               </td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
-                {invoice.igst.toFixed(2)}
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left">
+                {invoice.igst != 0 ? invoice.igst.toFixed(2) : "N/A"}
               </td>
             </tr>
             <tr>
               <td colSpan={3} className="border-l-0 border-r-0 border-t-0"></td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right text-lg">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-l-0 border-black p-2 print:py-1 font-bold text-right text-lg">
                 TOTAL AMOUNT
               </td>
-              <td className=" print:text-[0.5rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left text-xl font-bold">
+              <td className=" print:text-[0.85rem] border-[0.1rem] border-black p-2 print:py-1 border-r-0 text-left text-xl font-bold">
                 {invoice.grossAmount.toFixed(2)}
               </td>
             </tr>
           </tbody>
         </table>
 
-        <div className="flex print:text-[0.5rem]">
+        <div className="flex print:text-[0.85rem]">
           <div className=" p-2 w-[60%] border-r-[0.1rem] font-bold pb-12 print:pb-5">
             <p>Payment can be deposited by Cheque/DD/NEFT/RTGS directly</p>
             <p>Bank: AXIS BANK</p>
